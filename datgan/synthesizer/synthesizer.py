@@ -110,7 +110,7 @@ class Synthesizer:
         self.checkpoint_prefix = os.path.join(self.checkpoint_dir, "ckpt")
 
         # Transformer
-        self.onehot = OneHotEncoder(categories=[np.array(self.var_order)], sparse=False)
+        self.onehot = OneHotEncoder(categories=[np.array(self.var_order)], sparse_output=False)
 
         # Other parameters
         self.generator = None
