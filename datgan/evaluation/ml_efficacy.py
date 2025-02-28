@@ -61,7 +61,7 @@ def ml_assessment(df_orig, df_synth, continuous_columns, categorical_columns, ig
 
         if ycol in categorical_columns:
             lgbm_type = 'LGBMClassifier'
-            kf = StratifiedKFold(shuffle=True, random_state=42)
+            kf = StratifiedKFold(shuffle=True, random_state=42, n_splits=2)
             eval_metric = ['error']
         elif ycol in continuous_columns:
             lgbm_type = 'LGBMRegressor'
