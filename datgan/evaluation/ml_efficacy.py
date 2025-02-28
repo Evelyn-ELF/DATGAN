@@ -65,7 +65,7 @@ def ml_assessment(df_orig, df_synth, continuous_columns, categorical_columns, ig
             eval_metric = ['error']
         elif ycol in continuous_columns:
             lgbm_type = 'LGBMRegressor'
-            kf = KFold(shuffle=True, random_state=42)
+            kf =  KFold(shuffle=True, random_state=42, n_splits=2)
             eval_metric = ['l2', 'l1']
         cv = LightGBMCV(lgbm_type=lgbm_type,
                         splitter=kf,
